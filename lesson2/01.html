@@ -5,11 +5,12 @@
 	<title>实例索引</title>
 	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<style>
-		#outer{width:300px;margin:0 auto;padding:0;text-align:center;}
+		body,ul,li,button{margin:0;padding:0;}
+		#outer{width:200px;margin:0 auto;padding:0;text-align:center;}
 		ul{list-style-type:none;}
 		button{cursor:pointer;}
 		#outer{width:70px;margin:10px auto;}
-		#ime{margin-top:5px;background:#fff;border:1px solid #9a99ff;display:none;}
+		#ime{margin-top:5px;background:#fff;border:1px solid #9a99ff;display:none;width:70px}
 		#ime li{width:100%;line-height:24px;display:inline-block;vertical-align:top;}
 		#close{border-top:1px solid #9a99ff;}
 		#ime li a{color:#00c;padding:0 5px;display:block;text-decoration:none;}
@@ -366,12 +367,15 @@
 	<script>
 
 	window.onload = function (){
-		var oBtn = document.getElementsByTagName("button");
+		var oBtn = document.getElementsByTagName("button")[0];
 		var oUl = document.getElementById("ime");
 		var oClose = document.getElementById("close");
 
 		oBtn.onclick = function(){
-			oUl.style.block == "display"?"none":"display";
+			oUl.style.display = oUl.style.display == "block" ? "none" : "block";
+		}
+		oClose.onclick = function(){
+			oUl.style.display = "none";
 		}
 	};
 	</script>
